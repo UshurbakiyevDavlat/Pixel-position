@@ -5,11 +5,9 @@
         <section class="text-center">
             <h1 class="font-bold text-4xl">Let's Find Your next job</h1>
 
-            <form action="" class="mt-6">
-                <label for="job">
-                    <input id="job" type="text" placeholder="Web developer... " class="rounded-xl bg-white/5 border-white/10 px-5 py-4 w-full max-w-lg">
-                </label>
-            </form>
+            <x-forms.form action="/search" class="mt-6">
+                <x-forms.input :label="false" name="q" placeholder="Web developer..."/>
+            </x-forms.form>
         </section>
 
         <section class="pt-10">
@@ -26,7 +24,7 @@
             <x-section-heading>Tags</x-section-heading>
             <div class="mt-6 space-x-1">
                 @foreach($job->tags as $tag)
-                    <x-tag :$tag />
+                    <x-tag :$tag/>
                 @endforeach
             </div>
         </section>

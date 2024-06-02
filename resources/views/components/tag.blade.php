@@ -11,4 +11,4 @@
        }
 @endphp
 
-<a href="#" class="{{ $classes }}">{{ $tag->title }}</a>
+<a href="/tags/{{$tag->title}}" class="{{ $classes }}">{{ $tag->title }}</a>

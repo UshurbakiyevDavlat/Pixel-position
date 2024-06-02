@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * @method static firstOrCreate(string[] $array)
+ * @property mixed $jobs
  */
 class Tag extends Model
 {

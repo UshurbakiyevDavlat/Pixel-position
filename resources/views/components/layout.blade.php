@@ -25,9 +25,23 @@
             <a href="#">Companies</a>
         </div>
 
-        <div>
-            <a href="#">Post to a Job</a>
-        </div>
+        @guest
+            <div class="space-x-6 font-bold">
+                <a href="/register">Sign Up</a>
+                <a href="/login">Sign In</a>
+            </div>
+        @endguest
+        @auth
+            <div class="space-x-6 font-bold flex">
+                <a href="{{route('jobs.create')}}">Post to a Job</a>
+
+                <form method="POST" action="/logout">
+                    @csrf
+                    @method('DELETE')
+                    <button>Log Out</button>
+                </form>
+            </div>
+        @endauth
     </nav>
 
     <main class="mt-10 max-w-[986px] mx-auto">
